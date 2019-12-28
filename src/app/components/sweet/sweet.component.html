@@ -1,0 +1,42 @@
+<div class="row my-4">
+    <div class="col-md-6">
+        <h3>Liste des pâtisseries</h3>
+    </div>
+    <div class="col-md-6 text-right">
+        <button class="btn-btn-success btn-sm">
+            <i class="fa fa-plus"></i>Nouvelle pâtisserie
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+
+        <div class="form-group">
+            <label for="name">Nom</label>
+            <input [(ngModel)]="mySweet.name" id="name" type="text" class="form-control">
+            <label for="image">Image</label>
+            <input [(ngModel)]="mySweet.image" id="image" type="text" class="form-control">
+        </div>
+        <button (click)="postSweet()" class="btn btn-success btn-block">
+            <i class="fa fa-send"></i>
+            Nouvelle pâtisserie
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <ul class="list-group">
+            <li *ngFor = "let sweet of sweets" class="list-group-item d-flex justify-content-between align-items-center">
+                <button class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button>
+                {{ sweet.name }}
+                <img src= "{{ sweet.image }}" alt=" {{ sweet.image }}">
+                <button (click)="deleteSweet(sweet.id)" class="btn btn-sm btn-danger">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </li>
+        </ul>
+        Liste des pâtisseries
+    </div>
+</div>
