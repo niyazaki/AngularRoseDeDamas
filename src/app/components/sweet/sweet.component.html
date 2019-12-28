@@ -11,17 +11,18 @@
 
 <div class="row">
     <div class="col-md-6 mx-auto">
-
-        <div class="form-group">
-            <label for="name">Nom</label>
-            <input [(ngModel)]="mySweet.name" id="name" type="text" class="form-control">
-            <label for="image">Image</label>
-            <input [(ngModel)]="mySweet.image" id="image" type="text" class="form-control">
-        </div>
-        <button (click)="postSweet()" class="btn btn-success btn-block">
-            <i class="fa fa-send"></i>
-            Nouvelle pâtisserie
-        </button>
+        <form (ngSubmit) = "postSweet()">    
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input [(ngModel)]="mySweet.name" name="name" id="name" type="text" class="form-control">
+                <label for="image">Image</label>
+                <input [(ngModel)]="mySweet.image" name="image" id="image" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success btn-block">
+                <i class="fa fa-send"></i>
+                Nouvelle pâtisserie
+            </button>
+        </form>
     </div>
 </div>
 

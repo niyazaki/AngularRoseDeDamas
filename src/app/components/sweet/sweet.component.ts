@@ -14,6 +14,7 @@ export class SweetComponent implements OnInit {
     name : "",
     image : ""
   }
+
   sweets : Sweet[] = [];
 
   constructor(private sweetService: SweetService) { }
@@ -37,7 +38,11 @@ export class SweetComponent implements OnInit {
   }
 
   postSweet(){
-    this.sweetService.post(this.mySweet);
+    let jsonVariable = {
+      'name' : this.mySweet.name,
+      'image' : this.mySweet.image
+    }
+    this.sweetService.post(jsonVariable);
         
   }
 }
