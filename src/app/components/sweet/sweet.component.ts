@@ -42,7 +42,7 @@ export class SweetComponent implements OnInit {
       'name' : this.mySweet.name,
       'image' : this.mySweet.image
     }
-    this.sweetService.post(jsonVariable);
+    this.sweetService.postS(jsonVariable);
         
   }
 }

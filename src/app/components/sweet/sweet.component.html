@@ -4,7 +4,8 @@
     </div>
     <div class="col-md-6 text-right">
         <button class="btn-btn-success btn-sm">
-            <i class="fa fa-plus"></i>Nouvelle pâtisserie
+            <i class="fa fa-plus"></i>
+            Nouvelle pâtisserie
         </button>
     </div>
 </div>
@@ -22,22 +23,31 @@
                 <i class="fa fa-send"></i>
                 Nouvelle pâtisserie
             </button>
+            <p></p>
         </form>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-6 mx-auto">
-        <ul class="list-group">
-            <li *ngFor = "let sweet of sweets" class="list-group-item d-flex justify-content-between align-items-center">
-                <button class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button>
-                {{ sweet.name }}
-                <img src= "{{ sweet.image }}" alt=" {{ sweet.image }}">
+<div align = "center">
+    <div *ngFor = "let sweet of sweets"  class="card border-secondary mb-3" style="max-width: 20rem;">
+            <div class="card-header">
+                {{sweet.name}}
                 <button (click)="deleteSweet(sweet.id)" class="btn btn-sm btn-danger">
                     <i class="fa fa-trash"></i>
                 </button>
-            </li>
-        </ul>
-        Liste des pâtisseries
+            </div>
+        <div class="card-body">
+            <img style="height: 200px; width: 100%; display: block;" src={{sweet.image}} alt="Image de {{sweet.name}}">
+            <p class="card-text">
+
+            <!-- <div *ngFor = "let ingredient of sweet.ingredients" class = "ing">
+                    {{ingredient.name}} &nbsp
+            </div> -->
+            </p>
+            <div *ngFor = "let ing of sweet.ingredients">
+                {{ing | json}} 
+            </div>
+            <a href="" class ="btn btn-primary">Ingrédients</a>
+        </div>
     </div>
 </div>

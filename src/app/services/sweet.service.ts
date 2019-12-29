@@ -15,11 +15,10 @@ export class SweetService {
   }
 
   delete(id : number){
-    console.log("Delete OK")
     return this.http.delete(this.apiUrl+"/"+id);
   }
 
-  post(sweet){
+  postS(sweet){
     return this.http.post<Sweet>(this.apiUrl, sweet );
   }
 
