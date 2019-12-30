@@ -9,6 +9,7 @@ import { SweetComponent } from './components/sweet/sweet.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
+import { ListIngredientComponent } from './components/list-ingredient/list-ingredient.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { IngredientComponent } from './components/ingredient/ingredient.componen
     AppComponent,
     NavbarComponent,
     SweetComponent,
-    IngredientComponent
+    IngredientComponent,
+    ListIngredientComponent
   ],
   imports: [
     BrowserModule,

@@ -38,9 +38,6 @@ export class SweetComponent implements OnInit {
       name: this.mySweet.name,
       image: this.mySweet.image
     };
-    console.log(jsonVariable);
-    this.sweetService.postS(jsonVariable).subscribe((data) => {
-      console.log("post sent !", data);
-    });;
+    this.sweetService.postS(jsonVariable).subscribe((data) => {});
   }
 }

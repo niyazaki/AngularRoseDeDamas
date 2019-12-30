@@ -18,11 +18,12 @@ export class IngredientComponent implements OnInit {
     this.listOfIngredient();
   }
 
-  getIngredients() {
-    this.ingredientService
-      .findAll()
-      .subscribe(ingredients => (this.ingredients = ingredients));
-  }
+  // FIXME: useless ?
+  //getIngredients() {
+  //   this.ingredientService
+  //     .findAll()
+  //     .subscribe(ingredients => (this.ingredients = ingredients));
+  // }
 
   getIngredientByUrl(url: string) {
     this.ingredientService.findById(url).subscribe(data => {
