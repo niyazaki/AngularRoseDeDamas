@@ -1,29 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { IngredientService } from 'src/app/services/ingredient.service';
-import { Ingredient } from 'src/app/models/ingredient';
-
+import { Component, OnInit, Input, Output } from "@angular/core";
+import { IngredientService } from "src/app/services/ingredient.service";
+import { Ingredient } from "src/app/models/ingredient";
 
 @Component({
-  selector: 'app-ingredient',
-  templateUrl: './ingredient.component.html',
-  styleUrls: ['./ingredient.component.css']
+  selector: "app-ingredient",
+  templateUrl: "./ingredient.component.html",
+  styleUrls: ["./ingredient.component.css"]
 })
 export class IngredientComponent implements OnInit {
-  myIngredient : Ingredient={
-    name : "",
-    idSweet : 0
-  }
-  
-  ingredients : Ingredient[] = [];
+  @Input() listIngredient: string[];
 
-  constructor(private ingredientService : IngredientService) { }
+  public ingredients: Ingredient[] = [];
+
+  constructor(private ingredientService: IngredientService) {}
 
   ngOnInit() {
-    this.getIngredients();
+    this.listOfIngredient();
   }
-  
-  getIngredients(){
-    this.ingredientService.findAll()
-        .subscribe(ingredients => this.ingredients = ingredients);
+
+  getIngredients() {
+    this.ingredientService
+      .findAll()
+      .subscribe(ingredients => (this.ingredients = ingredients));
+  }
+
+  getIngredientByUrl(url: string) {
+    this.ingredientService.findById(url).subscribe(data => {
+      this.ingredients.push(data);
+    });
+  }
+
+  listOfIngredient() {
+    for (var j = 0; j < this.listIngredient.length; ++j) {
+      this.getIngredientByUrl(this.listIngredient[j]);
+    }
   }
 }

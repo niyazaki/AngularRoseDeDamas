@@ -38,14 +38,10 @@
             </div>
         <div class="card-body">
             <img style="height: 200px; width: 100%; display: block;" src={{sweet.image}} alt="Image de {{sweet.name}}">
-            <p class="card-text">
-
-            <!-- <div *ngFor = "let ingredient of sweet.ingredients" class = "ing">
-                    {{ingredient.name}} &nbsp
-            </div> -->
+            <p class="card-text">                
             </p>
-            <div *ngFor = "let ing of sweet.ingredients">
-                {{ing | json}} 
+            <div>
+                <app-ingredient [listIngredient]="sweet.ingredients"></app-ingredient>
             </div>
             <a href="" class ="btn btn-primary">Ingrédients</a>
         </div>
