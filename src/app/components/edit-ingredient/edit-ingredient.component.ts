@@ -4,7 +4,6 @@ import { IngredientService } from "src/app/services/ingredient.service";
 import { Ingredient } from "src/app/models/ingredient";
 import { SweetService } from "src/app/services/sweet.service";
 import { Sweet } from "src/app/models/sweet";
-import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 
 @Component({
   selector: "app-edit-ingredient",
@@ -22,7 +21,6 @@ export class EditIngredientComponent implements OnInit {
   isLoading: boolean;
   isSweetLoaded: boolean;
   selectedSweet: any;
-
 
   sweets: Sweet[] = [];
 
@@ -63,8 +61,8 @@ export class EditIngredientComponent implements OnInit {
       sweet: "api/sweets/" + this.selectedSweet
     };
 
-    this.ingredientService.put(this.ingredientId, jsonVariable).subscribe(data => {
-      console.log(data);
-    });
+    this.ingredientService
+      .put(this.ingredientId, jsonVariable)
+      .subscribe(data => {});
   }
 }

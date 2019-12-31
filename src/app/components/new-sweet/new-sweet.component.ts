@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Sweet } from "src/app/models/sweet";
 import { SweetService } from "src/app/services/sweet.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-new-sweet",
@@ -12,7 +13,7 @@ export class NewSweetComponent implements OnInit {
     name: "",
     image: ""
   };
-  constructor(private sweetService: SweetService) {}
+  constructor(private sweetService: SweetService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -22,6 +23,11 @@ export class NewSweetComponent implements OnInit {
       image: this.mySweet.image
     };
     
-    this.sweetService.post(jsonVariable).subscribe(data => {console.log(data)});
+    this.sweetService.post(jsonVariable).subscribe(data => {});
+    this.redirect();
+  }
+
+  redirect() {
+    this.router.navigate(["/"]);
   }
 }

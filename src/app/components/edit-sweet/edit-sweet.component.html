@@ -1,0 +1,21 @@
+<div *ngIf="!isLoading">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form (ngSubmit)="editSweet()" name="form">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input [(ngModel)]="sweet.name" name="name" id="name" type="text" class="form-control">
+        </div>
+        <p></p>
+        <label for="name">Image</label>
+        <input [(ngModel)]="sweet.image" name="image" id="image" type="text" class="form-control">
+        <p></p>
+        <button type="submit" (click)= "redirect()" class="btn btn-success btn-block">
+          <i class="fa fa-send"></i>
+          Modifier
+        </button>
+        <p></p>
+      </form>
+    </div>
+  </div>
+</div>

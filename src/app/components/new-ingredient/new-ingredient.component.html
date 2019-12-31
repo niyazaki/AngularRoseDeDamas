@@ -1,1 +1,15 @@
-<p>new-ingredient works!</p>
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <form (ngSubmit)="postIngredient()">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input [(ngModel)]="myIngredient.name" name="name" id="name" type="text" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-success btn-block">
+        <i class="fa fa-send"></i>
+        Nouvel ingredient
+      </button>
+      <p></p>
+    </form>
+  </div>
+</div>

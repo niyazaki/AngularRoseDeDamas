@@ -8,6 +8,8 @@
   <div *ngFor="let sweet of sweets" class="card border-secondary mb-3" style="max-width: 20rem;">
     <div class="card-header">
       {{sweet.name}}
+      <a routerLink="/editSweet/{{sweet.id}}" class="btn btn-sm btn-warning" routerLinkActive="active"><i
+          class="fa fa-pencil"></i></a>
       <button (click)="deleteSweet(sweet.id)" class="btn btn-sm btn-danger">
         <i class="fa fa-trash"></i>
       </button>

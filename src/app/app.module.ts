@@ -14,6 +14,7 @@ import { NewSweetComponent } from './components/new-sweet/new-sweet.component';
 import { EditIngredientComponent } from './components/edit-ingredient/edit-ingredient.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NewIngredientComponent } from './components/new-ingredient/new-ingredient.component';
+import { EditSweetComponent } from './components/edit-sweet/edit-sweet.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NewIngredientComponent } from './components/new-ingredient/new-ingredie
     ListIngredientComponent,
     NewSweetComponent,
     EditIngredientComponent,
-    NewIngredientComponent
+    NewIngredientComponent,
+    EditSweetComponent
   ],
   imports: [
     BrowserModule,

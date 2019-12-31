@@ -33,12 +33,4 @@ export class ListIngredientComponent implements OnInit {
       );
     });
   }
-
-  postIngredient() {
-    let jsonVariable = {
-      name: this.myIngredient.name,
-      idSweet: this.myIngredient.idSweet
-    };
-    this.ingredientService.post(jsonVariable).subscribe(data => {});
-  }
 }
