@@ -7,9 +7,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SweetComponent } from './components/sweet/sweet.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
 import { ListIngredientComponent } from './components/list-ingredient/list-ingredient.component';
+import { NewSweetComponent } from './components/new-sweet/new-sweet.component';
+import { EditIngredientComponent } from './components/edit-ingredient/edit-ingredient.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NewIngredientComponent } from './components/new-ingredient/new-ingredient.component';
 
 
 @NgModule({
@@ -18,13 +22,18 @@ import { ListIngredientComponent } from './components/list-ingredient/list-ingre
     NavbarComponent,
     SweetComponent,
     IngredientComponent,
-    ListIngredientComponent
+    ListIngredientComponent,
+    NewSweetComponent,
+    EditIngredientComponent,
+    NewIngredientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

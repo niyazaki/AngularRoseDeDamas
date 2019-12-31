@@ -11,14 +11,14 @@ export class SweetService {
   constructor(private http : HttpClient) { }
 
   findAll(){
-    return this.http.get<Sweet[]>(this.apiUrl+".json");
+    return this.http.get<Sweet[]>(this.apiUrl);
   }
 
   delete(id : number){
     return this.http.delete(this.apiUrl+"/"+id);
   }
 
-  postS(sweet){
+  post(sweet){
     return this.http.post<Sweet>(this.apiUrl, sweet );
   }
 

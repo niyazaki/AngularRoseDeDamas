@@ -18,13 +18,6 @@ export class IngredientComponent implements OnInit {
     this.listOfIngredient();
   }
 
-  // FIXME: useless ?
-  //getIngredients() {
-  //   this.ingredientService
-  //     .findAll()
-  //     .subscribe(ingredients => (this.ingredients = ingredients));
-  // }
-
   getIngredientByUrl(url: string) {
     this.ingredientService.findById(url).subscribe(data => {
       this.ingredients.push(data);

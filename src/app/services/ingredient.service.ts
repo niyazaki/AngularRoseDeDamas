@@ -22,4 +22,12 @@ export class IngredientService {
   delete(id : number){
     return this.http.delete(this.apiUrl+"/"+id)
   }
+
+  post(ingredient){
+    return this.http.post<Ingredient>(this.apiUrl, ingredient);
+  }
+
+  put(id, ingredient){
+    return this.http.put<Ingredient>(this.apiUrl + "/" + id, ingredient);
+  }
 }

@@ -1,30 +1,47 @@
-<p></p>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Pâtisserie</th>
-      <th scope="col">Modifier</th>
-      <th scope="col">Supprimer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- FIXME: All the td are in the first th for no reason -->
-    <div *ngFor="let ingredient of ingredients">
-      <tr class="table-info">
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Pâtisserie</th>
+        <th scope="col">Modifier</th>
+        <th scope="col">Supprimer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-info" *ngFor="let ingredient of ingredients">
         <td>{{ ingredient.id }}</td>
         <td>{{ ingredient.name }}</td>
         <td>{{ ingredient.sweet }}</td>
         <td>
-          <!-- TODO: href btn -->
-          <a href="" class="btn btn-primary">Modifier </a>
+          <a routerLink="/editIngredient/{{ingredient.id}}" class="btn btn-sm btn-primary"
+            routerLinkActive="active">Modifier</a>
         </td>
         <td>
-            <!-- TODO: (not important) style on button -->
           <button (click)="deleteIngredient(ingredient.id)" class="btn btn-sm btn-danger">
             <i class="fa fa-trash"></i>
           </button>
         </td>
       </tr>
+    </tbody>
+  </table>
+
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form (ngSubmit)="postIngredient()">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input [(ngModel)]="myIngredient.name" name="name" id="name" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success btn-block">
+          <i class="fa fa-send"></i>
+          Nouvel ingredient
+        </button>
+        <p></p>
+      </form>
     </div>
+  </div>
+
+</div>

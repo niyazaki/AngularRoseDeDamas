@@ -32,12 +32,4 @@ export class SweetComponent implements OnInit {
       this.sweets = this.sweets.filter(sweet => sweet.id != id);
     });
   }
-
-  postSweet() {
-    let jsonVariable = {
-      name: this.mySweet.name,
-      image: this.mySweet.image
-    };
-    this.sweetService.postS(jsonVariable).subscribe((data) => {});
-  }
 }

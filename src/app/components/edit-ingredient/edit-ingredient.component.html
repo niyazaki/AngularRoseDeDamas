@@ -1,0 +1,30 @@
+<div *ngIf="!isLoading">
+  {{ingredient.name}}
+  <p></p>
+  {{ingredient.sweet}}
+
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form (ngSubmit)="editIngredient()" name="form">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input [(ngModel)]="ingredient.name" name="name" id="name" type="text" class="form-control">
+        </div>
+        <!-- <select id="sweets" formControlName="countryControl">
+          <option [ngValue]="sweet" *ngFor="let sweet of sweets">{{sweet.name}}</option>
+        </select> -->
+        <div *ngIf="isSweetLoaded">
+            <ng-select [items]="sweets" bindLabel="name" name="selectsweet" bindValue="id" [(ngModel)]="selectedSweet">
+            </ng-select>
+        </div>
+       
+        <button type="submit" class="btn btn-success btn-block">
+          <i class="fa fa-send"></i>
+          Modifier
+        </button>
+        <p></p>
+      </form>
+    </div>
+  </div>
+</div>
