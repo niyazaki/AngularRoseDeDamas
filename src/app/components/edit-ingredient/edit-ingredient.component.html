@@ -10,6 +10,7 @@
         <div *ngIf="isSweetLoaded">
           <ng-select [items]="sweets" bindLabel="name" name="selectsweet" bindValue="id" [(ngModel)]="selectedSweet">
           </ng-select>
+          <p></p>
         </div>
         <button type="submit" class="btn btn-success btn-block">
           <i class="fa fa-send"></i>
