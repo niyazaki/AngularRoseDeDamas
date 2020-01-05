@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { IngredientService } from "src/app/services/ingredient.service";
 import { Ingredient } from "src/app/models/ingredient";
 import { SweetService } from "src/app/services/sweet.service";
@@ -27,7 +27,8 @@ export class EditIngredientComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ingredientService: IngredientService,
-    private sweetService: SweetService
+    private sweetService: SweetService,
+    private router: Router
   ) {
     this.isLoading = true;
     this.selectedSweet = null;
@@ -64,5 +65,11 @@ export class EditIngredientComponent implements OnInit {
     this.ingredientService
       .put(this.ingredientId, jsonVariable)
       .subscribe(data => {});
+
+    this.redirect();
+  }
+
+  redirect() {
+    this.router.navigate(["/ingredients"]);
   }
 }
